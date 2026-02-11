@@ -15,7 +15,7 @@ int main()
 	//array CONST
 	const int const_arr[] = {10, 20, 30};
 	std::cout << "Const array:" << std::endl;
-	iter(const_arr, 3, print_value<int>); // OK
+	iter(const_arr, 3, print_value<int>);
 
 	// iter(const_arr, 3, increment<int>); kjo S'DUHE TË KOMPILOJË
 		//array JO CONST
