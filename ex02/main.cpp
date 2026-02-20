@@ -7,22 +7,22 @@ int main(int, char**)
 	Array<int> emptyArray;
 	std::cout << "emptyArray size: " << emptyArray.size() << std::endl;
 
-    Array<int> numbers(MAX_VAL);
-    int* mirror = new int[MAX_VAL];
-    // srand(time(NULL));
-    // for (int i = 0; i < MAX_VAL; i++)
-    // {
-    //     const int value = rand();
-    //     numbers[i] = value;
-    //     mirror[i] = value;
-    // }
-    //SCOPE
-    {
+	Array<int> numbers(MAX_VAL);
+	int* mirror = new int[MAX_VAL];
+	//srand(time(NULL));
+	//for(int i = 0; i < MAX_VAL; i++)
+	//{
+	//const int value = rand();
+	//numbers[i] = value;
+	//mirror[i] = value;
+	//}
+	//SCOPE
+	{
 		numbers[1] = 2;
 		numbers[2] = 4;
-        Array<int> tmp;
+		Array<int> tmp;
 		tmp = numbers;
-        Array<int> test(tmp);
+		Array<int> test(tmp);
 		std::cout << "Testing the deep copy and the copy constructor and assignment\n";
 		std::cout << "Before changing the value: \n";
 		std::cout << "tmp[1]: " << tmp[1] << "\n";
@@ -39,46 +39,45 @@ int main(int, char**)
 		std::cout << "tmp[2]: " << tmp[2] << "\n";
 		std::cout << "numbers[1]: " << numbers[1] << "\n";
 		std::cout << "numbers[2]: " << numbers[2] << "\n";
-    }
+	}
 	srand(time(NULL));
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        const int value = rand();
-        numbers[i] = value;
-        mirror[i] = value;
+	for (int i = 0; i < MAX_VAL; i++)
+	{
+		const int value = rand();
+		numbers[i] = value;
+		mirror[i] = value;
+	}
+	for (int i = 0; i < MAX_VAL; i++)
+	{
+		if (mirror[i] != numbers[i])
+		{
+			std::cerr << "didn't save the same value!!" << std::endl;
+			return 1;
+		}
+	}
+	try
+	{
+		numbers[-1] = 0;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	try
+	{
+		numbers[MAX_VAL] = 0;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
     }
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        if (mirror[i] != numbers[i])
-        {
-            std::cerr << "didn't save the same value!!" << std::endl;
-            return 1;
-        }
-    }
-    try
-    {
-        numbers[-1] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    try
-    {
-        numbers[MAX_VAL] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+	for (int i = 0; i < MAX_VAL; i++)
+	{
+		numbers[i] = rand();
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        numbers[i] = rand();
-
-    }
-    delete [] mirror;//
-    return 0;
+	}
+	delete [] mirror;//
+	return 0;
 }
 
 // int main()

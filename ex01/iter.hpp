@@ -32,7 +32,7 @@ void print_string(const T& s)
 
 void add_exclamation(std::string& s)
 {
-	s += "!";
+	s += "ttttt!";
 }
 
 #endif

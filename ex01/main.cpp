@@ -35,6 +35,6 @@ int main()
 	std::cout << "Const string array:" << std::endl;
 	iter(const_words, 3, print_string<std::string>); // OK
 
-	// iter(const_words, 3, add_exclamation); duhet të mos kompiloje
+	//iter(const_words, 3, add_exclamation); //duhet të mos kompiloje
 	return 0;
 }

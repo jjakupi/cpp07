@@ -1,17 +1,22 @@
 “Përdorim T* sepse një array kur kalon në funksion shndërrohet në adresë të elementit të parë, dhe adresa në C++ përfaqësohet me pointer.”
 Pse JO T& (reference)?
 
-Pyetje shumë e mirë 👇
-
-Reference:
-
-lidhet me një element
-
-jo me një grup elementesh
+Reference:lidhet me një element,jo me një grup elementesh
 
 T& = një send
 T* = shumë sende rresht
 
 Pointer te array-t → ku janë elementet
-
 Pointer te funksioni → çfarë veprimi me bo për çdo element
+
+Sepse pa këtë, çdo herë do shkruaje:
+
+një loop për print
+një loop për ndryshim
+një loop për kontroll
+Me iter: loop shkruhet një herë,veprimi ndryshon
+
+Kjo quhet programim gjenerik.
+
+“iter implementon algoritmin e ecjes në array,
+ ndërsa funksioni i kaluar si parametër përcakton operacionin që kryhet mbi çdo element.”

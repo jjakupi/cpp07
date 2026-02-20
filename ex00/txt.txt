@@ -1,0 +1,8 @@
+Template është një model (recetë) për funksione ose klasa që nuk janë të lidhura me një tip të vetëm.
+Kompileri krijon automatikisht versionin e funksionit për tipin që përdorim.
+
+Sepse i njëjti kod punon për
+int,char, float,string,madje edhe klasat e tuapa e rishkruar funksionin.
+
+“Template është një mekanizëm gjenerik që lejon të shkruajmë një funksion ose klasë një herë dhe
+kompileri gjeneron automatikisht versione të ndryshme për tipe të ndryshme gjatë compile-time.”
