@@ -4,18 +4,22 @@
 int main(int, char**)
 {
 
-	Array<int> emptyArray;
+	Array<std::string> emptyArray(0);
 	std::cout << "emptyArray size: " << emptyArray.size() << std::endl;
-
+	Array<std::string> nrray(1);
+	std::cout << "nray size: " <<nrray.size() << std::endl;
+	try
+	{
+		nrray[1] = "elolo";
+		std::cout << nrray[1] << std::endl;
+		nrray[2] = "elol444";//index out of bounds
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	Array<int> numbers(MAX_VAL);
 	int* mirror = new int[MAX_VAL];
-	//srand(time(NULL));
-	//for(int i = 0; i < MAX_VAL; i++)
-	//{
-	//const int value = rand();
-	//numbers[i] = value;
-	//mirror[i] = value;
-	//}
 	//SCOPE
 	{
 		numbers[1] = 2;
@@ -70,12 +74,11 @@ int main(int, char**)
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
-    }
-	for (int i = 0; i < MAX_VAL; i++)
-	{
-		numbers[i] = rand();
-
 	}
+	// for (int i = 0; i < MAX_VAL; i++)
+	// {
+	// 	numbers[i] = rand();
+	// }
 	delete [] mirror;//
 	return 0;
 }
@@ -99,11 +102,11 @@ int main(int, char**)
 // }
 
 
-// // int main()
-// // {
-// //     const Array<int> ca(3);
-// //     std::cout << "ca.size() = " << ca.size() << std::endl;
-// // 	ca[0] = 444;
-// //     // leximi duhet të lejohet
-// //     std::cout << "ca[0] = " << ca[0] << std::endl;
-// // }
+// int main()
+// {
+//     const Array<int> ca(3);
+//     std::cout << "ca.size() = " << ca.size() << std::endl;
+// 	ca[0] = 444;
+//     // leximi duhet të lejohet
+//     std::cout << "ca[0] = " << ca[0] << std::endl;
+// }

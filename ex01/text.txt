@@ -1,6 +1,5 @@
 “Përdorim T* sepse një array kur kalon në funksion shndërrohet në adresë të elementit të parë, dhe adresa në C++ përfaqësohet me pointer.”
 Pse JO T& (reference)?
-
 Reference:lidhet me një element,jo me një grup elementesh
 
 T& = një send

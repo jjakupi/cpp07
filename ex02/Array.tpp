@@ -26,8 +26,8 @@ Array<T> &Array<T>::operator=(const Array& copy)
 	{
 		delete[] m_data; // fshij memorin e vjeter te objektit qe te mund te bejme asssignment e objektit tjeter!
 		m_size = copy.m_size; //sa elemente jan brenda
-		m_data = new T[m_size]; // merr memorie te madhsis se size nese njuk e dim size,
-								//new T i 'objektit 'copy' se di sa meomori ka nevoj;
+		m_data = new T[m_size]; // merr memorie te madhsis se size nese nuk e dim size,
+								//new T i 'objektit 'copy' se di sa memorie	ka nevoj
 		for(unsigned i = 0; i < m_size; i++)
 			m_data[i] = copy.m_data[i];// kopjo qfar ka ne objektin a te objekti b nje nga nje ;
 	}
